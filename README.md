@@ -1,17 +1,15 @@
-# Quartz v5
+# Curiosophy
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+An open learning notebook on AI, science, and whatever I get curious about next.
+Live at **https://iammohithhh.github.io/Curiosophy**.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+- Pages live in [`content/`](content/). Raw notes go in [`inbox/`](inbox/README.md), which stays local.
+- AI assistants follow [`AGENTS.md`](AGENTS.md).
+- Built with [Quartz](https://quartz.jzhao.xyz). Every push to `main` rebuilds and publishes the site through GitHub Actions.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Preview locally
+```
+npm ci
+npx quartz plugin install
+npx quartz build --serve      # http://localhost:8080
+```

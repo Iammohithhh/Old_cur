@@ -12,3 +12,8 @@ replit.nix
 .quartz/
 quartz/cli/tui/dist/
 .turbo/
+
+# Curiosophy: raw notes stay local
+inbox/*
+!inbox/README.md
+*.pdf
