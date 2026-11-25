@@ -14,6 +14,6 @@ quartz/cli/tui/dist/
 .turbo/
 
 # Curiosophy: raw notes stay local
-inbox/*
-!inbox/README.md
+content/inbox/*
+!content/inbox/README.md
 *.pdf

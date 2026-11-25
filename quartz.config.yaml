@@ -9,6 +9,7 @@ configuration:
   baseUrl: iammohithhh.github.io/Curiosophy
   ignorePatterns:
     - private
+    - inbox
     - templates
     - .obsidian
   theme:

@@ -16,12 +16,12 @@ Notion, chats, paper notes). Your job is to turn that material into clean, hones
 - No tag system for now. Keep it simple.
 - `<subsection>/images/`: images for that subsection.
 - `content/log.md`: one line per session, newest first.
-- `inbox/`: raw material, **git-ignored and never published**. Originals go to `inbox/_processed/` once processed.
+- `content/inbox/`: raw material, **git-ignored and never published** (it's in Quartz's `ignorePatterns`). Originals go to `content/inbox/_processed/` once processed.
 - `templates/entry.md`: the frontmatter and section template for new pages.
 - `quartz/`, `docs/`, `quartz.config.yaml`: the Quartz engine and its configuration. Don't edit these unless asked.
 
 ## "Process the inbox"
-For each file in `inbox/` (skip `README.md` and `_processed/`):
+For each file in `content/inbox/` (skip `README.md` and `_processed/`):
 1. Read it fully. Work out the question or questions it's about.
 2. If an existing page already covers the question, **extend that page** rather than creating a duplicate.
    Otherwise create `content/<shelf>/<subsection>/<kebab-case-question>.md` from `templates/entry.md`.
@@ -36,7 +36,7 @@ For each file in `inbox/` (skip `README.md` and `_processed/`):
 5. End the page with a `> [!todo] Things to check` callout listing the claims the author should verify.
 6. Link related pages with `[[wikilinks]]`, including across shelves (for example, an MLIP page linking to a DFT page).
 7. Images: save them in the subsection's `images/` folder and embed them with `![[file.png]]`.
-8. Move the original to `inbox/_processed/YYYY-MM-DD-<original-name>`.
+8. Move the original to `content/inbox/_processed/YYYY-MM-DD-<original-name>`.
 9. Add one line to the top of the list in `content/log.md`.
 10. Run `npx quartz build` and fix any errors. Then report what changed and which claims need checking.
 
