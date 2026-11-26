@@ -40,6 +40,16 @@ For each file in `content/inbox/` (skip `README.md` and `_processed/`):
 9. Add one line to the top of the list in `content/log.md`.
 10. Run `npx quartz build` and fix any errors. Then report what changed and which claims need checking.
 
+## Notes pasted straight into the chat (e.g. from a phone)
+The author often works from a phone in a cloud session, where `content/inbox/` doesn't exist.
+Treat notes pasted or dictated into the chat exactly like an inbox file: follow steps 1–7, 9 and 10 above.
+There's no original file to move, and the raw notes are never saved to the repo.
+
+## "Publish"
+When the author says "publish", commit with a short message and push to `main`. That deploys the site.
+If the environment only allows pushing to a branch, push the branch, open a pull request, and tell the author
+to merge it (they can do that from the GitHub mobile app).
+
 ## Rules
 - **Don't commit or push** unless the author asks. Pushing to `main` publishes the site.
 - Never add PDFs of papers or long copied passages. Link the DOI or arXiv page instead.
