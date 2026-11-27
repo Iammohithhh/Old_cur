@@ -5,28 +5,33 @@ https://iammohithhh.github.io/Curiosophy. The author writes rough material anywh
 Notion, chats, paper notes). Your job is to turn that material into clean, honest notebook pages.
 
 ## Layout
-- `content/`: the published site, organised into shelves, each with subsections:
-  - `ai/`: `machine-learning/`, `llms/`, `rl/`, `world-models/`
-  - `science/`: `dft/`, `atomistic-simulation/`, `electrochemistry/`, `batteries/`, `energy/`
-  - `ai-x-science/`: `mlips/` (the current main focus)
-  - `math/`
-  - `others/`: anything that doesn't fit elsewhere
-  - `reading-lists/`
-- Every folder has a short `index.md`. Quartz lists a folder's pages automatically, so don't maintain lists by hand.
+The author is keeping the structure deliberately small for now and will reorganise later. Don't add new top-level
+sections unless asked.
+- `content/`: the published site.
+  - `speed-accuracy-barrier/`: **Documenting the Speed–Accuracy Barrier challenge** (Discovered Materials).
+    `index.md` is the main write-up: the challenge, the baseline, observations, open questions, a list of subpages
+    and a dated journal (newest first). Anything interesting the author finds becomes a subpage in this folder,
+    linked from the "Subpages" section of `index.md`. New findings also get a line in the journal.
+  - `papers/`: **Papers: my understanding.** One page per paper, made from `templates/paper.md`. These exist so the
+    author can skim a page instead of rereading the paper, so keep them skimmable: TL;DR, problem, key idea,
+    how it works, results, limitations, my take. Create a paper page only when the author sends notes on that paper.
+  - `reading-lists/`: curated lists of papers to read.
+- Every folder has a short `index.md`. Quartz lists a folder's pages automatically, so don't maintain lists by hand
+  (the "Subpages" list on the challenge write-up is the one exception).
 - No tag system for now. Keep it simple.
-- `<subsection>/images/`: images for that subsection.
+- `<folder>/images/`: images for that folder.
 - `content/log.md`: one line per session, newest first.
 - `content/inbox/`: raw material, **git-ignored and never published** (it's in Quartz's `ignorePatterns`). Originals go to `content/inbox/_processed/` once processed.
-- `templates/entry.md`: the frontmatter and section template for new pages.
+- `templates/entry.md`: template for question pages. `templates/paper.md`: template for paper pages.
 - `quartz/`, `docs/`, `quartz.config.yaml`: the Quartz engine and its configuration. Don't edit these unless asked.
 
 ## "Process the inbox"
 For each file in `content/inbox/` (skip `README.md` and `_processed/`):
 1. Read it fully. Work out the question or questions it's about.
 2. If an existing page already covers the question, **extend that page** rather than creating a duplicate.
-   Otherwise create `content/<shelf>/<subsection>/<kebab-case-question>.md` from `templates/entry.md`.
-   If no subsection fits, put the page directly in the shelf folder, or in `others/`. Create a new subsection
-   (with a one-line `index.md`) only when there are already several pages on that subject, or the author asks for one.
+   Otherwise: notes about a paper go in `content/papers/<kebab-case-paper-name>.md` (from `templates/paper.md`);
+   notes from working on the challenge go in `content/speed-accuracy-barrier/<kebab-case-question>.md`
+   (from `templates/entry.md`), linked from the challenge write-up. If neither fits, ask the author where it goes.
 3. Keep the author's ideas, examples and framing. Improve clarity, structure and math (KaTeX: `$...$`, `$$...$$`).
    Don't pad the page with generic textbook material the author didn't ask for.
 4. Set the frontmatter honestly:
@@ -34,8 +39,8 @@ For each file in `content/inbox/` (skip `README.md` and `_processed/`):
    - `code: ran` only if you actually executed the code and pasted the real output. Otherwise use `untested`, or `none`.
    - `sources`: only references you have verified exist (DOI or arXiv). Mark anything unverified as `(unverified)`.
 5. End the page with a `> [!todo] Things to check` callout listing the claims the author should verify.
-6. Link related pages with `[[wikilinks]]`, including across shelves (for example, an MLIP page linking to a DFT page).
-7. Images: save them in the subsection's `images/` folder and embed them with `![[file.png]]`.
+6. Link related pages with `[[wikilinks]]`, including between the challenge pages and paper pages.
+7. Images: save them in that folder's `images/` folder and embed them with `![[file.png]]`.
 8. Move the original to `content/inbox/_processed/YYYY-MM-DD-<original-name>`.
 9. Add one line to the top of the list in `content/log.md`.
 10. Run `npx quartz build` and fix any errors. Then report what changed and which claims need checking.
