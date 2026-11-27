@@ -1,0 +1,12 @@
+# Build output and the downloaded Quartz engine
+public/
+.quartz-engine/
+node_modules/
+.DS_Store
+.obsidian/
+private/
+
+# Raw notes stay local
+content/inbox/*
+!content/inbox/README.md
+*.pdf
